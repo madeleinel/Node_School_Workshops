@@ -60,3 +60,17 @@
 //       }})}});
 
 // -------- Exercise 6 -------- //
+const myModule = require('./mymodule.js');
+
+const dataPath = process.argv[2];
+const ext = process.argv[3];
+
+function resultHandler (err, data) {
+  if (err)
+    return err;
+  data.forEach(function(file) {
+    console.log(file);
+  });
+}
+
+myModule(dataPath, ext, resultHandler);
