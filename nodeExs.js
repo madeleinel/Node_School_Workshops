@@ -60,17 +60,39 @@
 //       }})}});
 
 // -------- Exercise 6 -------- //
-const myModule = require('./mymodule.js');
+// const myModule = require('./mymodule.js');
+//
+// const dataPath = process.argv[2];
+// const ext = process.argv[3];
+//
+// function resultHandler (err, data) {
+//   if (err)
+//     return err;
+//   data.forEach(function(file) {
+//     console.log(file);
+//   });
+// }
+//
+// myModule(dataPath, ext, resultHandler);
 
-const dataPath = process.argv[2];
-const ext = process.argv[3];
-
-function resultHandler (err, data) {
-  if (err)
-    return err;
-  data.forEach(function(file) {
-    console.log(file);
-  });
-}
-
-myModule(dataPath, ext, resultHandler);
+// -------- Exercise 7 -------- //
+// var http = require('http');
+// var url = process.argv[2];
+// http.get(url, function(response) {
+//   response.setEncoding('utf8');
+//   response.on('data', function (data) {
+//     console.log(data);
+//   });
+//   response.on('error', console.error)
+// }).on('error', console.error);
+//
+// // OR could write it as:
+//
+// http.get(url, function(res) {
+//   res.setEncoding('utf8');   // to get the data as a string, and  not a buffer
+//   res.on('data', console.log);  // console.log(data)
+//   res.on('error', console.error);  // when error >> console.log(error)
+// }).on('error', console.error);
+//
+// // the 'res' / 'response' object = a Node Stream object
+// // >> can be treated as objects that emit events (eg data, error, end)
