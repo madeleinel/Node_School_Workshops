@@ -1,4 +1,4 @@
-// Exercise 1
+// -------- Exercise 1 -------- //
 // console.log("HELLO WORLD");
 
 // // run by 'node nodeExs'
@@ -6,7 +6,7 @@
 // // to run in test environment: 'learnyounode run'
 // // 'learnyounode print' or 'learnyounode help'
 
-//Exercise 2
+// -------- Exercise 2 -------- //
 // var data = process.argv;
 // var dataLength = data.length;
 // var tot = 0;
@@ -19,4 +19,44 @@
 //
 // console.log(tot);
 
-// Exercise 3
+// -------- Exercise 3 -------- //
+// var fs = require('fs');
+// var file = process.argv[2];
+// var data = fs.readFileSync(file).toString();
+// var splitData = data.split('\n');
+// var num = (splitData.length - 1);
+// console.log(num);
+
+// // OR it can be written in fewer lines:
+
+// var fs = require('fs');
+// var data = fs.readFileSync(process.argv[2]);
+// var num  = (data.toString().split('\n').length) -1;
+// console.log(num);
+
+// -------- Exercise 4 -------- //
+// var fs = require('fs');
+// var file = process.argv[2];
+// // Call 'utf8' as second argument to get results as string, rather than buffer
+// fs.readFile(file, 'utf8', function(err, fileContent) {
+//   if (err) { console.log(err) } else {
+//   console.log(fileContent.split('\n').length - 1);
+// }});
+
+// -------- Exercise 5 -------- //
+// var fs = require('fs');
+// var path = require('path');
+//
+// // the folder the files are in
+// var dataPath = process.argv[2];
+// // the file extensions
+// var ext = '.' + process.argv[3];
+//
+// fs.readdir(dataPath, function(err, list) {
+//   if (err) {console.log(err); } else {
+//     list.filter(function(file) {
+//       if (ext == path.extname(file)) {
+//         console.log(file);
+//       }})}});
+
+// -------- Exercise 6 -------- //
